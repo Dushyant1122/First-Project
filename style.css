@@ -1,0 +1,69 @@
+/* button 1 */
+body{
+    background-color: black;
+}
+.shadowBtn{
+    width: 120px;
+    height: 60px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    position: relative;
+}
+.shadowBtn:hover{
+    background-color: white;
+    color: black;
+    transition: 1s ease;
+}
+.shadowBtn::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50px;
+    background: transparent;
+    height: 50%;
+    width: 100%;
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(8px);
+    transition: 1s ease;
+}
+.shadowBtn:hover::before{
+    background: white;
+    top: 70px;
+}
+/* button 2 */
+
+.btn{
+   height: 3rem;
+   width: 9rem;
+   border: 3px solid deepskyblue;
+   background: transparent;
+   color: white;
+   font-weight: bold;
+   position: relative;
+   cursor: pointer; 
+}
+.btn::before, btn::after{
+    content: ' ';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: inherit;
+    transition: 0.5s ease;
+}
+.btn::before{
+    left: -15px;
+    top: -15px;
+    border-width: 3px 0px 0px 3px;
+}
+.btn::after{
+    right: 15px;
+    bottom: 15px;
+    border-width: 0 3px 3px 0;
+}
+.btn:hover::after, .btn:hover::before{
+    width: calc(100% + 27px);
+    height: calc(100% + 27px);
+}
